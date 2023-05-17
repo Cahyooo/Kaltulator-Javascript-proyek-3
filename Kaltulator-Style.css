@@ -1,0 +1,102 @@
+body{
+    margin: 0 0 2vw 0;
+}
+
+.background{
+    background-image: url("https://media.istockphoto.com/id/1069974748/id/foto/hari-bersalju-musim-dingin-di-hutan-yang-indah.jpg?s=1024x1024&w=is&k=20&c=aqKi-Ucfq2Phd4aeHHSPrUpnE8e0iiCq6ZbWhJecAig=");
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    filter: brightness(70%);
+}
+
+.main{
+    /* border: 0.2vw solid white; */
+    margin: 3vw auto 0 auto;
+    width: 27%;
+    height: 40vw;
+    border-radius: 3vw;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 999;
+}
+
+.judul{
+    text-align: center;
+    color: #5c4b4b;
+    margin: 2% 0 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hasil{
+    /* border: 0.2vw solid white; */
+    background-color: white;
+    border-radius: 2vw;
+    margin: auto;
+    width: 95%;
+    height: 10%;
+}
+
+.bawah{
+    /* background-color: black; */
+    margin: 3% 3% 0 3%;
+    width: 94%;
+    border-radius: 0 0 3vw 3vw;
+    height: 65%;
+}
+
+p{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.reset, .tujuh, .empat, .satu, .koma{
+    width: 19%;
+    height: 19%;
+    border-radius: 100%;
+    background-color: white;
+    margin-left: 2%;
+    margin-right: 6.3%;
+    margin-bottom: 5%;
+    float: left;
+}
+
+.delete, .delapan, .lima, .dua, .nol{
+    width: 19%;
+    height: 19%;
+    border-radius: 100%;
+    background-color: white;
+    margin-right: 6.3%;
+    margin-bottom: 5%;
+    float: left;
+}
+
+.persentase, .sembilan, .enam, .tiga{
+    width: 19%;
+    height: 19%;
+    border-radius: 100%;
+    background-color: white;
+    margin-bottom: 5%;
+    float: left;
+}
+
+.bagi, .kali, .kurang, .tambah{
+    width: 19%;
+    height: 19%;
+    border-radius: 100%;
+    background-color: white;
+    margin-left: 6.3%;
+    margin-bottom: 5%;
+    float: left;
+}
+
+.samadengan{
+    height: 19%;
+    width: 43%;
+    border-radius: 5vw;
+    float: left;
+    background-color: white;
+}
