@@ -15,12 +15,17 @@ button.forEach((a) => {
     let lastChar = teks.slice(-1);
     let pisah = teks.split(/[+\-*\/]/);
 
-    console.log(pisah);
+    // console.log(pisah);
     if (a.textContent <= 9 && a.textContent >= 0) {
+      if (value.textContent == '0') {
+        value.textContent = "";
+      }
       value.textContent = teks + b;
-      console.log(e.target);
-    } else if (isi.textContent == "C") {
-      value.textContent = "";
+      console.log(value.textContent);
+    }
+    //   console.log(e.target);
+    else if (isi.textContent == "C") {
+      value.textContent = "0";
     } else if (isi.textContent == "DEL") {
       value.textContent = char;
     } else if (isi.textContent == "/") {
@@ -29,7 +34,8 @@ button.forEach((a) => {
         lastChar == "*" ||
         lastChar == "-" ||
         lastChar == "+" ||
-        lastChar == "."
+        lastChar == "." ||
+        lastChar == ""
       ) {
       } else {
         value.textContent = teks + b;
@@ -40,7 +46,8 @@ button.forEach((a) => {
         lastChar == "*" ||
         lastChar == "-" ||
         lastChar == "+" ||
-        lastChar == "."
+        lastChar == "." ||
+        lastChar == ""
       ) {
       } else {
         value.textContent = teks + b;
@@ -51,7 +58,8 @@ button.forEach((a) => {
         lastChar == "*" ||
         lastChar == "-" ||
         lastChar == "+" ||
-        lastChar == "."
+        lastChar == "." ||
+        lastChar == ""
       ) {
       } else {
         value.textContent = teks + b;
@@ -62,7 +70,8 @@ button.forEach((a) => {
         lastChar == "*" ||
         lastChar == "-" ||
         lastChar == "+" ||
-        lastChar == "."
+        lastChar == "." ||
+        lastChar == ""
       ) {
       } else {
         value.textContent = teks + b;
@@ -73,7 +82,8 @@ button.forEach((a) => {
         lastChar == "*" ||
         lastChar == "-" ||
         lastChar == "+" ||
-        lastChar == "."
+        lastChar == "." ||
+        lastChar == ""
       ) {
       } else {
         for (let i = 0; i < pisah.length; i++) {
@@ -95,6 +105,5 @@ button.forEach((a) => {
     }
   });
 });
-
 
 console.log("Selamat mencoba kaltulator");
