@@ -173,7 +173,18 @@ other.forEach((a) => {
     if (isi.textContent == "(") {
       if (indexTerakhir2 <= "9" && indexTerakhir2 >= "0") {
         value.textContent = teks + "*(";
-      } else if (teks <= "9" && teks >= "1") {
+      }else if (
+        lastChar == "/" ||
+        lastChar == "*" ||
+        lastChar == "-" ||
+        lastChar == "+" ||
+        lastChar == "." ||
+        lastChar == "(" ||
+        lastChar == ")"
+      ){
+        value.textContent = teks + "("
+      }
+       else if (teks <= "9" && teks >= "1") {
         value.textContent = teks + "*(";
       } else if (value.textContent == "0") {
         value.textContent = "(";
