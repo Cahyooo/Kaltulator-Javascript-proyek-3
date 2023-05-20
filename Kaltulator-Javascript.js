@@ -1,33 +1,65 @@
 // Ambil DOM
 const hasil = document.querySelector(".hasil");
 const button = document.querySelectorAll(".bawah div");
-const button2 = document.querySelectorAll(".bawah div p");
-const dalam = document.querySelectorAll(".bawah p");
 const value = document.querySelector(".value");
-const C = document.querySelector(".reset p");
+const other = document.querySelectorAll(".tombolOther div");
 
 button.forEach((a) => {
-  a.addEventListener("click", function (e) {
+  a.addEventListener("click", function () {
     let isi = a.querySelector("p");
     let b = isi.textContent;
     let teks = value.textContent;
     let char = teks.slice(0, -1);
     let lastChar = teks.slice(-1);
+    let secLastChar = teks.slice(-2);
     let pisah = teks.split(/[+\-*\/]/);
+    let indexTerakhir2 = secLastChar.charAt(1);
+    // console.log(indexTerakhir2);
 
     // console.log(pisah);
     if (a.textContent <= 9 && a.textContent >= 0) {
-      if (value.textContent == '0') {
-        value.textContent = "";
+      if (value.textContent == "0") {
+        setTimeout(() => {
+          value.textContent = "";
+          teks = "";
+          setTimeout(() => {
+            value.textContent = teks + b;
+          }, 2);
+        }, 1);
+      } else if (pisah[pisah.length - 1] == "0") {
+        if (a.textContent == "0") {
+          setTimeout(() => {
+            pisah[pisah.length - 1].textContent = "";
+            teks = "";
+            setTimeout(() => {
+              value.textContent = teks + b;
+            }, 2);
+          }, 1);
+        }
+      } else {
+        setTimeout(() => {
+          value.textContent = teks + b;
+        }, 2);
+        if ( lastChar == ")") {
+         setTimeout(() => {
+          value.textContent = teks + "*" + isi.textContent;
+         }, 3);
+        }
       }
-      value.textContent = teks + b;
-      console.log(value.textContent);
-    }
-    //   console.log(e.target);
-    else if (isi.textContent == "C") {
+    } else if (isi.textContent == "C") {
       value.textContent = "0";
     } else if (isi.textContent == "DEL") {
-      value.textContent = char;
+      if (value.textContent == "0") {
+      } else if (value.textContent == "Can't devide with 0") {
+        value.textContent = "0";
+      } else {
+        if (value.textContent.length == 1) {
+          setTimeout(() => {
+            value.textContent = "0";
+          }, 1);
+        }
+        value.textContent = char;
+      }
     } else if (isi.textContent == "/") {
       if (
         lastChar == "/" ||
@@ -96,14 +128,50 @@ button.forEach((a) => {
         }
       }
     } else if (isi.textContent == "%") {
+      if (lastChar == "(" || lastChar == ")") {
+      }
       let persen = pisah[pisah.length - 1] * 0.01;
 
       value.textContent = persen;
     } else if (isi.textContent == "=") {
       let hitung = eval(teks);
       value.textContent = hitung;
+      if (secLastChar == "/0") {
+        value.textContent = "Can't devide with 0";
+      }
     }
   });
 });
 
+other.forEach((a) => {
+  a.addEventListener("click", function () {
+    let isi = a.querySelector("p");
+    let b = isi.textContent;
+    let teks = value.textContent;
+    let char = teks.slice(0, -1);
+    let char2 = teks.slice(0, -2);
+    let lastChar = teks.slice(-1);
+    let secLastChar = teks.slice(-2);
+    let pisah = teks.split(/[+\-*\/]/);
+    let indexTerakhir2 = secLastChar.charAt(1);
+
+    if (isi.textContent == "(") {
+      if (indexTerakhir2 <= "9" && indexTerakhir2 >= "0") {
+        value.textContent = teks + "*(";
+      } else if (teks <= "9" && teks >= "1") {
+        value.textContent = teks + "*(";
+      } else if (value.textContent == "0") {
+        value.textContent = "(";
+      } else {
+        value.textContent = teks + "(";
+      }
+    } else if (isi.textContent == ")") {
+      value.textContent = teks + ")";
+    } else if (isi.textContent == "√") {
+      value.textContent = teks + "**(0.5)";
+    } else if (isi.textContent == "^") {
+      value.textContent = teks + "**";
+    }
+  });
+});
 console.log("Selamat mencoba kaltulator");
