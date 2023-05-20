@@ -56,7 +56,9 @@ body{
     left: -2vw;
     position: absolute;
     z-index: 90;
-    transform: translateX(-14.18vw);
+    /* transform: translateX(-14.18vw); */
+    border-radius: 1vw 0 0 1vw;
+    transition: 0.7s;
 }
 
 .geser{
@@ -69,7 +71,7 @@ body{
     display: flex;
     float: left;
     transition: 0.3s;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 1vw;
 }
 
