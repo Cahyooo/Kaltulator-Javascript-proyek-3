@@ -13,12 +13,12 @@ body{
 }
 
 .main{
-    /* border: 0.2vw solid white; */
+    /* border: 0.5vw solid white; */
     margin: 3vw auto 0 auto;
     width: 27%;
     height: 40vw;
     border-radius: 3vw;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.75);
     z-index: 99;
     position: relative;
 }
@@ -38,6 +38,7 @@ body{
     width: 95%;
     height: 10%;
     overflow: auto;
+    box-shadow: -3vw -3vw 10vw rgba(0, 0, 0, 0.5);
 }
 
 .value{
@@ -51,7 +52,8 @@ body{
     width: 60%;
     height: 30%;
     /* background-color: black; */
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
     margin-top: 19vw;
     left: -2vw;
     position: absolute;
@@ -71,12 +73,14 @@ body{
     display: flex;
     float: left;
     transition: 0.3s;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 1vw;
+    position: relative;
 }
 
 .geser:hover{
     filter: brightness(65%);
+    cursor: pointer;
 }
 
 .geser p{
@@ -86,17 +90,21 @@ body{
 
 .tombolOther{
     float: left;
-    width: 84.5%;
+    width: 81.5%;
     height: 100%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    position: relative;
 }
 
 .tombolOther div{
     transition: 0.3s;
+    position: relative;
+    z-index: 90;
 }
 
 .tombolOther div:hover{
     filter: brightness(70%);
+    cursor: pointer;
 }
 
 .kurungPembuka{
@@ -170,6 +178,7 @@ p{
 
 .bawah div:hover{
     filter: brightness(70%);
+    cursor: pointer;
 }
 
 .reset, .tujuh, .empat, .satu, .koma{
