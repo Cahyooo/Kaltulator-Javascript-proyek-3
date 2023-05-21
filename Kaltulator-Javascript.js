@@ -69,7 +69,8 @@ button.forEach((a) => {
         lastChar == "-" ||
         lastChar == "+" ||
         lastChar == "." ||
-        lastChar == ""
+        lastChar == "" ||
+        lastChar == "("
       ) {
       } else {
         value.textContent = teks + b;
@@ -81,7 +82,8 @@ button.forEach((a) => {
         lastChar == "-" ||
         lastChar == "+" ||
         lastChar == "." ||
-        lastChar == ""
+        lastChar == "" ||
+        lastChar == "("
       ) {
       } else {
         value.textContent = teks + b;
@@ -93,9 +95,9 @@ button.forEach((a) => {
         lastChar == "+" ||
         secLastChar == "(-"
       ) {
-        value.textContent = teks + "(-"
-      }else if (lastChar == "-" ||  lastChar == ".") {}
-      else {
+        value.textContent = teks + "(-";
+      } else if (lastChar == "-" || lastChar == ".") {
+      } else {
         value.textContent = teks + b;
       }
     } else if (isi.textContent == "+") {
@@ -106,7 +108,7 @@ button.forEach((a) => {
         lastChar == "+" ||
         lastChar == "." ||
         lastChar == ""
-       ) {
+      ) {
       } else {
         value.textContent = teks + b;
       }
@@ -139,10 +141,9 @@ button.forEach((a) => {
         lastChar == "(" ||
         lastChar == ")"
       ) {
-      }
-      else {
+      } else {
         let persen = pisah[pisah.length - 1] * 0.01;
-        let setelah = teks.slice(0,-(pisah[pisah.length - 1].length));
+        let setelah = teks.slice(0, -pisah[pisah.length - 1].length);
         value.textContent = setelah + persen;
       }
     } else if (isi.textContent == "=") {
@@ -173,7 +174,7 @@ other.forEach((a) => {
     if (isi.textContent == "(") {
       if (indexTerakhir2 <= "9" && indexTerakhir2 >= "0") {
         value.textContent = teks + "*(";
-      }else if (
+      } else if (
         lastChar == "/" ||
         lastChar == "*" ||
         lastChar == "-" ||
@@ -181,10 +182,9 @@ other.forEach((a) => {
         lastChar == "." ||
         lastChar == "(" ||
         lastChar == ")"
-      ){
-        value.textContent = teks + "("
-      }
-       else if (teks <= "9" && teks >= "1") {
+      ) {
+        value.textContent = teks + "(";
+      } else if (teks <= "9" && teks >= "1") {
         value.textContent = teks + "*(";
       } else if (value.textContent == "0") {
         value.textContent = "(";
