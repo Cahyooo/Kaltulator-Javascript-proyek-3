@@ -245,6 +245,32 @@
     float: left;
     background-color: white;
   }
+
+  .reset p,
+  .tujuh p,
+  .empat p,
+  .satu p,
+  .koma p,
+  .delete p,
+  .delapan p,
+  .lima p,
+  .dua p,
+  .nol p,
+  .persentase p,
+  .sembilan p,
+  .enam p,
+  .tiga p,
+  .bagi p,
+  .kali p,
+  .kurang p,
+  .tambah p{
+    user-select: none;
+    -webkit-user-select: none; 
+  }
+  .tombolOther div p{
+    user-select: none;
+    -webkit-user-select: none; 
+  }
 }
 
 @media (min-width: 500px) and (max-width: 1023px) {
@@ -494,6 +520,32 @@
     float: left;
     background-color: white;
   }
+
+  .reset p,
+  .tujuh p,
+  .empat p,
+  .satu p,
+  .koma p,
+  .delete p,
+  .delapan p,
+  .lima p,
+  .dua p,
+  .nol p,
+  .persentase p,
+  .sembilan p,
+  .enam p,
+  .tiga p,
+  .bagi p,
+  .kali p,
+  .kurang p,
+  .tambah p{
+    user-select: none;
+    -webkit-user-select: none; 
+  }
+  .tombolOther div p{
+    user-select: none;
+    -webkit-user-select: none; 
+  }
 }
 
 @media (max-width: 500px) {
@@ -701,6 +753,32 @@
   .tambah {
     width: 14.5vw;
     height: 14.5vw;
+  }
+
+  .reset p,
+  .tujuh p,
+  .empat p,
+  .satu p,
+  .koma p,
+  .delete p,
+  .delapan p,
+  .lima p,
+  .dua p,
+  .nol p,
+  .persentase p,
+  .sembilan p,
+  .enam p,
+  .tiga p,
+  .bagi p,
+  .kali p,
+  .kurang p,
+  .tambah p{
+    user-select: none;
+    -webkit-user-select: none; 
+  }
+  .tombolOther div p{
+    user-select: none;
+    -webkit-user-select: none; 
   }
 
   .reset,
