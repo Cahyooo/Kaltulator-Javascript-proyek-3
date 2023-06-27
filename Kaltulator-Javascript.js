@@ -203,15 +203,63 @@ other.forEach((a) => {
 
 let x = 1;
 let kiriOrKanan = geser.querySelector("p");
+// geser.addEventListener("click", function () {
+//   if (x == 1) {
+//     alt.style.transform = "translateX(-14.18vw)";
+//     kiriOrKanan.textContent = ">";
+//     x++;
+//   } else if (x == 2) {
+//     alt.style.transform = "translateX(0)";
+//     kiriOrKanan.textContent = "<";
+//     x = 1;
+//   }
+// });
+
 geser.addEventListener("click", function () {
-  if (x == 1) {
-    alt.style.transform = "translateX(-14.18vw)";
-    kiriOrKanan.textContent = ">";
-    x++;
-  } else if (x == 2) {
-    alt.style.transform = "translateX(0)";
-    kiriOrKanan.textContent = "<";
-    x = 1;
+  function getWindowWidth() {
+    return (
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth
+    );
+  }
+
+  var windowWidth = getWindowWidth();
+  var translateValue;
+
+  if (windowWidth >= 500) {
+    if (windowWidth >= 1024) {
+      translateValue = "-14.18vw";
+    } else if (windowWidth >= 500) {
+      translateValue = "-21.8vw";
+    }
+    alt.style.transform = "translateX(" + translateValue + ")";
+    if (x == 1) {
+      kiriOrKanan.textContent = ">";
+      x++;
+    } else if (x == 2) {
+      kiriOrKanan.textContent = "<";
+      alt.style.transform = "translateX(0)";
+      x = 1;
+    }
+  }
+
+  if (windowWidth < 500) {
+    alt.style.transform = "translateX(-1vw) translateY(-38vw) rotate(-90deg)";
+    if (x == 1) {
+      kiriOrKanan.textContent = ">";
+      other.forEach((a)=>{
+        a.style.display = "none";
+      })
+      x++;
+    } else if (x == 2) {
+      kiriOrKanan.textContent = "<";
+      alt.style.transform = "translateX(-1vw) translateY(0) rotate(-90deg)";
+      other.forEach((a)=>{
+        a.style.display = "block";
+      })
+      x = 1;
+    }
   }
 });
 
